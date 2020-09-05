@@ -40,9 +40,19 @@ using namespace std;
         return bps;
     }
 
+    void Doctor::setTotalDctrs(int a)
+    {
+        totalDctrs = a;
+    }
+
+    int Doctor::getTotalDctrs()
+    {
+        return totalDctrs;
+    }
+
     void Doctor::displayData()
     {
-        cout << endl << "\tDoctor's Name: \t\t\t" << name;
-        cout << endl << "\tDoctor's Specialization:\t" << specialization;
-        cout << endl << "\tBPS: \t\t\t\t" << bps << endl;
+        cout << endl << "\t\t\t\t\tDoctor's Name: \t\t\t" << name;
+        cout << endl << "\t\t\t\t\tDoctor's Specialization:\t" << specialization;
+        cout << endl << "\t\t\t\t\tBPS: \t\t\t\t" << bps << endl;
     }

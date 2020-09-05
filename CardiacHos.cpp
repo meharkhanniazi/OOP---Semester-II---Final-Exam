@@ -45,11 +45,12 @@ using namespace std;
 
     void CardiacHos::displayData()
     {
-        cout << endl << "\tHospital's Registeration No.\t" << getHospitalRegNum();
-        cout << endl << "\tHospital's Name:\t\t" << getName();
-        cout << endl << "\tHospital's Location: \t\t" << getLocation();
-        cout << endl << "\tHospital's Size: \t\t" << getSizeOfHos();
-        cout << endl << "\tHospital's Ownership:\t\t" << getOwnership();
-        cout << endl << "\tHospital's Services: \t\t" << getServices() << endl;
+        cout << endl << "\t\t\t\t\tHospital's Registeration No.\t" << getHospitalRegNum();
+        cout << endl << "\t\t\t\t\tHospital's Name:\t\t" << getName();
+        cout << endl << "\t\t\t\t\tHospital's Location: \t\t" << getLocation();
+        cout << endl << "\t\t\t\t\tHospital's Size: \t\t" << getSizeOfHos();
+        cout << endl << "\t\t\t\t\tHospital's Ownership:\t\t" << getOwnership();
+        cout << endl << "\t\t\t\t\tHospital's Services: \t\t" << getServices();
+        cout << endl << "\t\t\t\t\tTotal Doctors: \t\t\t" << totalDoctors << endl;
 
     }

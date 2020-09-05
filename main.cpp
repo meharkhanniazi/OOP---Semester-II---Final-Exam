@@ -9,54 +9,10 @@
 #include"ChildrenHos.h"
 using namespace std;
 
-void mainloop();
-void hospitalManagementSystem();
-void hospitalSection();
-void hospitalData(vector<Hospital>&);
 
 int main()
 {
     system("mode 650");
-    //mainloop();
-    vector<Hospital> Hos;
-    Hospital Hsptl1(748596,"Karachi Public Hospital","Saudabad Karachi");
-    Hospital Hsptl2 = Hsptl1;
-    Hos.push_back(Hsptl1);
-    int NumOfObj = Hos.size();
-    for(int i = 0; i < NumOfObj; i++)
-    {
-        Hos[i].displayData();
-    }
-
-   /* Doctor Dctr1("Dr. Muhammad Adnan","Surgical Doctor",19);
-    Doctor Dctr2(Dctr1);
-    Dctr2.displayData();
-
-    Patient Ptnt1(874598,"Ali Khan",29);
-    Patient Ptnt2(Ptnt1);
-    Ptnt2.displayData();
-
-    Hospital Hsptl1(748596,"Karachi Public Hospital","Saudabad Karachi");
-    Hospital Hsptl2 = Hsptl1;
-    Hsptl2.displayData();
-
-    Disease Dis1("Diabetes","Critical","Type 1 Diabetes");
-    Disease Dis2 = Dis1;
-    Dis2.displayData();
-
-    CardiacHos CarHos1(4563,"National Institute of Cardiovascular Diseases (NICVD)","Karachi","Medium","Public","Thallium Scan, Angiography and Echocardiography (ECHO)");
-    CardiacHos CarHos2(CarHos1);
-    CarHos2.displayData();
-
-    ChildrenHos ChlHos1(88569,"National Children Hospital","Karachi","Large","Public","Allergy, Apherisi, Audiology & Brain Treatment","Acute and Long-term Treatment");
-    ChildrenHos ChlHos2 = ChlHos1;
-    ChlHos2.displayData();*/
-
-    return 0;
-}
-
-void mainloop()
-{
     system("CLS");
     system("Color 5F");
 
@@ -89,27 +45,29 @@ void mainloop()
     cin>>classselection;
     if (classselection == '1')
     {
-        system("CLS");
-        hospitalManagementSystem();
-
-    }
-    else if (classselection == '2')
-    {
-        system("CLS");
-        //cricketManagementSystem();
-
-    }
-    else
-    {
-        cout << endl << "\t\tYou have pressed a wrong key!\n\n\n";
-
-    }
-}
-
-void hospitalManagementSystem()
-{
+    system("CLS");
     system("CLS");
     system("Color 2F");
+
+    vector<CardiacHos> CarHos;
+    vector<ChildrenHos> ChlHos;
+    vector<Doctor> Dctr;
+    vector<Patient> Ptnt;
+    vector<Disease> Dis;
+
+    Disease Disease_1("Diabetes","Critical","Type 1 Diabetes");
+    Dis.push_back(Disease_1);
+
+    Disease Disease_2("Cancer","Stage II","leukemia");
+    Dis.push_back(Disease_2);
+
+    Disease Disease_3("Hepatitis C","Stage I","Hepatitis");
+    Dis.push_back(Disease_2);
+
+    Disease Disease_4(Disease_3);
+    Dis.push_back(Disease_4);
+
+
     char classselection;
 
     cout<<endl<<endl;
@@ -129,153 +87,129 @@ void hospitalManagementSystem()
     cout<<"************************************************************************************************************************";
     cout<<"************************************************************************************************"<<endl;
 
+    CardiacHos CardiacHospital_1(4563,"National Institute of Cardiovascular Diseases (NICVD)","Karachi","Medium","Public","Thallium Scan, Angiography and Echocardiography (ECHO)");
+    CarHos.push_back(CardiacHospital_1);
+    CardiacHos CardiacHospital_2(CardiacHospital_1);
+    CarHos.push_back(CardiacHospital_2);
 
-    cout<<"\n\n\n\t\t\tSelect An Option to Continue:"<<endl<<endl;
-
-    cout<<"\t\t\t1. Hospital Section "<<endl;
-    cout<<"\t\t\t2. Doctor Section"<<endl;
-    cout<<"\t\t\t3. Patient Section"<<endl;
-    cout<<"\t\t\t4. Exit";
-
-    cout<<endl<<endl<<"\t\t\tEnter the Selected Number To Continue : ";
-    cin>>classselection;
-    if (classselection == '1')
+    cout<<"\n\n\t\t\t\t\t\t\t\t    Cardiac Hospital's Data"<<endl<<endl;
+    cout<<"\t\t\t\t***************************************************************************************************\n\n";
+    cout<<"\n\n\t\t\t\t\tNumber of Registered Hospitals : "<<CarHos.size() << endl << endl;
+    int total = CarHos.size();
+    for(unsigned int i = 0; i < total; i++)
     {
-        system("CLS");
-        hospitalSection();
+        cout<<"\n\t\t\t\t\tHospital # "<<i+1<<endl;
+        CarHos[i].displayData();
     }
+    cout<<"\n\t\t\t\t\tHospital # "<<total<<" 's data is same as Hospital # "<<total-1<<" due to copy constructor.\n\n";
+
+
+    ChildrenHos ChildrenHospital_1(88569,"National Children Hospital","Karachi","Large","Public","Allergy, Apherisi, Audiology & Brain Treatment","Acute and Long-term Treatment");
+    ChlHos.push_back(ChildrenHospital_1);
+    ChildrenHos ChildrenHospital_2(ChildrenHospital_1);
+    ChlHos.push_back(ChildrenHospital_2);
+
+    cout<<"\n\n\t\t\t\t\t\t\t\t    Children Hospital's Data"<<endl<<endl;
+    cout<<"\t\t\t\t***************************************************************************************************\n\n";
+    cout<<"\n\n\t\t\t\t\tNumber of Registered Hospitals : "<<ChlHos.size() << endl << endl;
+    total = ChlHos.size();
+    for(unsigned int i = 0; i < total; i++)
+    {
+        cout<<"\n\t\t\t\t\tHospital # "<<i+1<<endl;
+        ChlHos[i].displayData();
+    }
+    cout<<"\n\t\t\t\t\tHospital # "<<total<<" 's data is same as Hospital # "<<total-1<<" due to copy constructor.\n\n";
+
+
+    Doctor Dctr_1("Dr. Muhammad Adnan","Surgical Doctor",19);
+    Dctr.push_back(Dctr_1);
+
+    Doctor Dctr_2("Dr. Shahab Khan","Medical Doctor",18);
+    Dctr.push_back(Dctr_2);
+    Doctor Dctr_3(Dctr_2);
+    Dctr.push_back(Dctr_3);
+
+    cout<<"\n\n\t\t\t\t\t\t\t\t\t    Doctor's Data"<<endl<<endl;
+    cout<<"\t\t\t\t***************************************************************************************************\n\n";
+    cout<<"\n\n\t\t\t\t\tNumber of Registered Doctors : "<<Dctr.size() << endl << endl;
+    Doctor Dctr_Obj;
+    total = Dctr.size();
+    Dctr_Obj.setTotalDctrs(total);
+    for(unsigned int i = 0; i < total; i++)
+    {
+        cout<<"\n\t\t\t\t\tDoctor # "<<i+1<<endl;
+        Dctr[i].displayData();
+    }
+
+    cout<<"\n\t\t\t\t\tDoctor # "<<total<<" 's data is same as Doctor # "<<total-1<<" due to copy constructor.\n\n";
+
+
+    Patient Patient_1(874598,"Ali Khan",29);
+    Ptnt.push_back(Patient_1);
+
+    Patient Patient_2(886545,"Sameer Khan",18);
+    Ptnt.push_back(Patient_2);
+
+    Patient Patient_3(965874,"Muhammad Talha",46);
+    Ptnt.push_back(Patient_3);
+
+    Patient Patient_4(Patient_3);
+    Ptnt.push_back(Patient_4);
+
+    cout<<"\n\n\t\t\t\t\t\t\t\t\t    Patient's Data"<<endl<<endl;
+    cout<<"\t\t\t\t***************************************************************************************************\n\n";
+    cout<<"\n\n\t\t\t\t\tNumber of Registered Patients : "<<Ptnt.size() << endl << endl;
+    total = Ptnt.size();
+    for(unsigned int i = 0; i < total; i++)
+    {
+        cout<<"\n\t\t\t\t\tDoctor # "<<i+1<<endl;
+        Ptnt[i].displayData();
+    }
+
+    cout<<"\n\t\t\t\t\tPatient # "<<total<<" 's data is same as Patient # "<<total-1<<" due to copy constructor.\n\n";
+
+    cout << Dctr_Obj.getTotalDctrs();
+
+    }
+
+
     else if (classselection == '2')
     {
         system("CLS");
+        //cricketManagementSystem();
+
 
     }
-    else if (classselection == '3' )
+    else
     {
-        system("CLS");
+        cout << endl << "\t\tYou have pressed a wrong key!\n\n\n";
 
     }
-     else if (classselection == '4' )
-    {
-        cout << "\n\n\t\t\tThank you so much for using Hospital Management System (HMS)." << endl << endl;
-    }
-
-}
-
-void hospitalSection()
-{
-    system("CLS");
-    system("Color 2F");
-    char classselection;
-
-    cout<<endl<<endl;
-    cout<<"************************************************************************************************************************";
-    cout<<"************************************************************************************************************************";
-    cout<<"************************************************************************************************";
-    cout<<"\n\n\t\t\t\t\tWelcome To CSC 104 – OBJECT-ORIENTED PROGRAMMING (OOP) FINAL EXAM (SPRING 2020)"<<endl;
-    cout<<"\n\n************************************************************************************************************************";
-    cout<<"************************************************************************************************************************";
-    cout<<"************************************************************************************************";
-    cout<<endl;
-    cout<<"************************************************************************************************************************";
-    cout<<"************************************************************************************************************************";
-    cout<<"************************************************************************************************";
-    cout<<"\n\n\t\t\t\t\t\t\t\t\tHOSPITAL SECTION"<<endl;
-    cout<<"\n\n************************************************************************************************************************";
-    cout<<"************************************************************************************************************************";
-    cout<<"************************************************************************************************"<<endl;
 
 
-    cout<<"\n\n\n\t\t\tSelect An Option to Continue:"<<endl<<endl;
+   /* Doctor Dctr1("Dr. Muhammad Adnan","Surgical Doctor",19);
+    Doctor Dctr2(Dctr1);
+    Dctr2.displayData();
 
-    cout<<"\t\t\t1. Hospital's Data "<<endl;
-    cout<<"\t\t\t2. No. of Registered Doctors"<<endl;
-    cout<<"\t\t\t3. No. of Registered Patients"<<endl;
-    cout<<"\t\t\t4. Cardiac Hospital"<<endl;
-    cout<<"\t\t\t5. Children Hospital"<<endl;
-    cout<<"\t\t\t6. Back"<<endl;
-    cout<<"\t\t\t7. Exit";
-
-    cout<<endl<<endl<<"\t\t\tEnter the Selected Number To Continue : ";
-    cin>>classselection;
-    if (classselection == '1')
-    {
-        system("CLS");
-    //    hospitalData();
-    }
-    else if (classselection == '2')
-    {
-        system("CLS");
-
-    }
-    else if (classselection == '3' )
-    {
-        system("CLS");
-
-    }
-     else if (classselection == '4' )
-    {
-        cout << "\n\n\t\t\tThank you so much for using Hospital Management System (HMS)." << endl << endl;
-    }
-
-}
-
-void hospitalData(vector<Hospital>& Hos)
-{
-    system("CLS");
-    system("Color 2F");
-    char classselection;
-
-    cout<<endl<<endl;
-    cout<<"************************************************************************************************************************";
-    cout<<"************************************************************************************************************************";
-    cout<<"************************************************************************************************";
-    cout<<"\n\n\t\t\t\t\tWelcome To CSC 104 – OBJECT-ORIENTED PROGRAMMING (OOP) FINAL EXAM (SPRING 2020)"<<endl;
-    cout<<"\n\n************************************************************************************************************************";
-    cout<<"************************************************************************************************************************";
-    cout<<"************************************************************************************************";
-    cout<<endl;
-    cout<<"************************************************************************************************************************";
-    cout<<"************************************************************************************************************************";
-    cout<<"************************************************************************************************";
-    cout<<"\n\n\t\t\t\t\t\t\t\t\tHOSPITAL'S DATA"<<endl;
-    cout<<"\n\n************************************************************************************************************************";
-    cout<<"************************************************************************************************************************";
-    cout<<"************************************************************************************************"<<endl;
+    Patient Ptnt1(874598,"Ali Khan",29);
+    Patient Ptnt2(Ptnt1);
+    Ptnt2.displayData();
 
     Hospital Hsptl1(748596,"Karachi Public Hospital","Saudabad Karachi");
     Hospital Hsptl2 = Hsptl1;
-    Hos.push_back(Hsptl1);
-    int NumOfObj = Hos.size();
-    for(int i = 0; i < NumOfObj; i++)
-    {
-        Hos[i].displayData();
-    }
+    Hsptl2.displayData();
 
-    cout<<"\n\t\t\t\t=============================================================================================="<<endl;
-    cout<<"\n\n\n\t\t\t\t\tSelect An Option to Continue:"<<endl<<endl;
+    Disease Dis1("Diabetes","Critical","Type 1 Diabetes");
+    Disease Dis2 = Dis1;
+    Dis2.displayData();
 
-    cout<<"\t\t\t\t\t1. Back"<<endl;
-    cout<<"\t\t\t\t\t2. Home Page"<<endl;
-    cout<<"\t\t\t\t\t3. Exit"<<endl;
+    CardiacHos CarHos1(4563,"National Institute of Cardiovascular Diseases (NICVD)","Karachi","Medium","Public","Thallium Scan, Angiography and Echocardiography (ECHO)");
+    CardiacHos CarHos2(CarHos1);
+    CarHos2.displayData();
 
-    cout<<endl<<endl<<"\t\t\t\t\tEnter the Selected Number To Continue : ";
-    cin>>classselection;
-    if (classselection == '1')
-    {
-        system("CLS");
-        hospitalSection();
-    }
-    else if (classselection == '2')
-    {
-        system("CLS");
-        hospitalManagementSystem();
+    ChildrenHos ChlHos1(88569,"National Children Hospital","Karachi","Large","Public","Allergy, Apherisi, Audiology & Brain Treatment","Acute and Long-term Treatment");
+    ChildrenHos ChlHos2 = ChlHos1;
+    ChlHos2.displayData();*/
 
-    }
-    else if (classselection == '3' )
-    {
-        cout<<endl<<"\t\t\t\t\tThank you for using Hospital Management System (HMS).\n\n\n";
-    }
-
+    return 0;
 }
-
-

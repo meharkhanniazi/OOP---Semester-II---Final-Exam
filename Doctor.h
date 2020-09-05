@@ -5,10 +5,11 @@ class Patient;
 using namespace std;
 class Doctor
 {
-private:
+public:
     string name;
     string specialization;
     int bps;
+    int totalDctrs;
     Patient pat;
 
 public:
@@ -23,6 +24,9 @@ public:
 
     void setBPS(int);
     int getBPS();
+
+    void setTotalDctrs(int);
+    int getTotalDctrs();
 
     void displayData();
 };
