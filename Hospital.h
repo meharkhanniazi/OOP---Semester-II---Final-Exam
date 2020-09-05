@@ -5,7 +5,7 @@ class Doctor;
 using namespace std;
 class Hospital
 {
-private:
+protected:
     double hospitalRegNum;
     string name;
     string location;

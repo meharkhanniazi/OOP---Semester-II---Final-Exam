@@ -1,1 +1,66 @@
+#include<iostream>
+#include"ChildrenHos.h"
+using namespace std;
+
+    ChildrenHos::ChildrenHos()
+    {
+
+    }
+    ChildrenHos::ChildrenHos(double a,string b, string c,string d,string e,string f, string g)
+    {
+        hospitalRegNum = a;
+        name = b;
+        location = c;
+        sizeOfHos = d;
+        ownership = e;
+        services = f;
+        treatmentType = g;
+    }
+
+    void ChildrenHos::setSizeOfHos(string d)
+    {
+        sizeOfHos = d;
+    }
+    string ChildrenHos::getSizeOfHos()
+    {
+        return sizeOfHos;
+    }
+
+    void ChildrenHos::setOwnership(string e)
+    {
+        ownership = e;
+    }
+    string ChildrenHos::getOwnership()
+    {
+        return ownership;
+    }
+
+    void ChildrenHos::setServices(string f)
+    {
+        services = f;
+    }
+    string ChildrenHos::getServices()
+    {
+        return services;
+    }
+
+    void ChildrenHos::setTreatmentType(string g)
+    {
+        treatmentType = g;
+    }
+    string ChildrenHos::getTreatmentType()
+    {
+        return treatmentType;
+    }
+
+    void ChildrenHos::displayData()
+    {
+        cout << endl << "\tHospital's Registeration No.\t" << getHospitalRegNum();
+        cout << endl << "\tHospital's Name:\t\t" << getName();
+        cout << endl << "\tHospital's Location: \t\t" << getLocation();
+        cout << endl << "\tHospital's Size: \t\t" << getSizeOfHos();
+        cout << endl << "\tHospital's Ownership:\t\t" << getOwnership();
+        cout << endl << "\tHospital's Services: \t\t" << getServices();
+        cout << endl << "\tHospital's Treatment Type: \t" << getTreatmentType() << endl;
+    }
 

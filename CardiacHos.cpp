@@ -6,11 +6,14 @@ using namespace std;
     {
 
     }
-    CardiacHos::CardiacHos(string a,string b,string c)
+    CardiacHos::CardiacHos(double a,string b, string c,string d,string e,string f)
     {
-        sizeOfHos = a;
-        ownership = b;
-        services = c;
+        hospitalRegNum = a;
+        name = b;
+        location = c;
+        sizeOfHos = d;
+        ownership = e;
+        services = f;
     }
 
     void CardiacHos::setSizeOfHos(string d)
@@ -22,10 +25,31 @@ using namespace std;
         return sizeOfHos;
     }
 
-    void CardiacHos::setOwnership(string);
-    string CardiacHos::getOwnership();
+    void CardiacHos::setOwnership(string e)
+    {
+        ownership = e;
+    }
+    string CardiacHos::getOwnership()
+    {
+        return ownership;
+    }
 
-    void CardiacHos::setServices(string);
-    string CardiacHos::getServices();
+    void CardiacHos::setServices(string f)
+    {
+        services = f;
+    }
+    string CardiacHos::getServices()
+    {
+        return services;
+    }
 
-    void CardiacHos::displayData();
+    void CardiacHos::displayData()
+    {
+        cout << endl << "\tHospital's Registeration No.\t" << getHospitalRegNum();
+        cout << endl << "\tHospital's Name:\t\t" << getName();
+        cout << endl << "\tHospital's Location: \t\t" << getLocation();
+        cout << endl << "\tHospital's Size: \t\t" << getSizeOfHos();
+        cout << endl << "\tHospital's Ownership:\t\t" << getOwnership();
+        cout << endl << "\tHospital's Services: \t\t" << getServices() << endl;
+
+    }

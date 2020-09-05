@@ -11,7 +11,7 @@ private:
 
 public:
     CardiacHos();
-    CardiacHos(string,string,string);
+    CardiacHos(double,string,string,string,string,string);
 
     void setSizeOfHos(string);
     string getSizeOfHos();
@@ -25,5 +25,5 @@ public:
     void displayData();
 };
 
-#endif // included_HOSPITAL_H
+#endif // included_CARDIACHOS_H
 

@@ -3,6 +3,8 @@
 #include"Patient.h"
 #include"Hospital.h"
 #include"Disease.h"
+#include"CardiacHos.h"
+#include"ChildrenHos.h"
 using namespace std;
 
 int main()
@@ -22,6 +24,14 @@ int main()
     Disease Dis1("Diabetes","Critical","Type 1 Diabetes");
     Disease Dis2 = Dis1;
     Dis2.displayData();
+
+    CardiacHos CarHos1(4563,"National Institute of Cardiovascular Diseases (NICVD)","Karachi","Medium","Public","Thallium Scan, Angiography and Echocardiography (ECHO)");
+    CardiacHos CarHos2(CarHos1);
+    CarHos2.displayData();
+
+    ChildrenHos ChlHos1(88569,"National Children Hospital","Karachi","Large","Public","Allergy, Apherisi, Audiology & Brain Treatment","Acute and Long-term Treatment");
+    ChildrenHos ChlHos2 = ChlHos1;
+    ChlHos2.displayData();
 
     return 0;
 }
