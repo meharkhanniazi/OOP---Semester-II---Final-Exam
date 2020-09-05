@@ -48,7 +48,7 @@ int main()
     system("CLS");
     system("CLS");
     system("Color 2F");
-    int total;
+    int a=0,b=0,c=0,d=0;
     vector<CardiacHos> CarHos;
     vector<ChildrenHos> ChlHos;
     vector<Doctor> Dctr;
@@ -86,60 +86,6 @@ int main()
     cout<<"\n\n************************************************************************************************************************";
     cout<<"************************************************************************************************************************";
     cout<<"************************************************************************************************"<<endl;
-    CardiacHos CardiacHospital_1(4563,"National Institute of Cardiovascular Diseases (NICVD)","Karachi","Medium","Public","Thallium Scan, Angiography and Echocardiography (ECHO)");
-    CarHos.push_back(CardiacHospital_1);
-    CardiacHos CardiacHospital_2(CardiacHospital_1);
-    CarHos.push_back(CardiacHospital_2);
-
-    cout<<"\n\n\t\t\t\t\t\t\t\t    Cardiac Hospital's Data"<<endl<<endl;
-    cout<<"\t\t\t\t***************************************************************************************************\n\n";
-    cout<<"\n\n\t\t\t\t\tNumber of Registered Hospitals : "<<CarHos.size() << endl << endl;
-    total = CarHos.size();
-    for(unsigned int i = 0; i < total; i++)
-    {
-        cout<<"\n\t\t\t\t\tHospital # "<<i+1<<endl;
-        CarHos[i].displayData();
-    }
-    cout<<"\n\t\t\t\t\tHospital # "<<total<<" 's data is same as Hospital # "<<total-1<<" due to copy constructor.\n\n";
-
-    ChildrenHos ChildrenHospital_1(88569,"National Children Hospital","Karachi","Large","Public","Allergy, Apherisi, Audiology & Brain Treatment","Acute and Long-term Treatment");
-    ChlHos.push_back(ChildrenHospital_1);
-    ChildrenHos ChildrenHospital_2(ChildrenHospital_1);
-    ChlHos.push_back(ChildrenHospital_2);
-
-    cout<<"\n\n\t\t\t\t\t\t\t\t    Children Hospital's Data"<<endl<<endl;
-    cout<<"\t\t\t\t***************************************************************************************************\n\n";
-    cout<<"\n\n\t\t\t\t\tNumber of Registered Hospitals : "<<ChlHos.size() << endl << endl;
-    total = ChlHos.size();
-    for(unsigned int i = 0; i < total; i++)
-    {
-        cout<<"\n\t\t\t\t\tHospital # "<<i+1<<endl;
-        ChlHos[i].displayData();
-    }
-    cout<<"\n\t\t\t\t\tHospital # "<<total<<" 's data is same as Hospital # "<<total-1<<" due to copy constructor.\n\n";
-
-
-    Doctor Dctr_1("Dr. Muhammad Adnan","Surgical Doctor",19);
-    Dctr.push_back(Dctr_1);
-
-    Doctor Dctr_2("Dr. Shahab Khan","Medical Doctor",18);
-    Dctr.push_back(Dctr_2);
-    Doctor Dctr_3(Dctr_2);
-    Dctr.push_back(Dctr_3);
-
-    cout<<"\n\n\t\t\t\t\t\t\t\t\t    Doctor's Data"<<endl<<endl;
-    cout<<"\t\t\t\t***************************************************************************************************\n\n";
-    cout<<"\n\n\t\t\t\t\tNumber of Registered Doctors : "<<Dctr.size() << endl << endl;
-    total = Dctr.size();
-    Doctor Dctr_Obj;
-    Dctr_Obj.setTotalDctrs(total);
-    for(unsigned int i = 0; i < total; i++)
-    {
-        cout<<"\n\t\t\t\t\tDoctor # "<<i+1<<endl;
-        Dctr[i].displayData();
-    }
-
-    cout<<"\n\t\t\t\t\tDoctor # "<<total<<" 's data is same as Doctor # "<<total-1<<" due to copy constructor.\n\n";
 
 
     Patient Patient_1(874598,"Ali Khan",29);
@@ -157,16 +103,75 @@ int main()
     cout<<"\n\n\t\t\t\t\t\t\t\t\t    Patient's Data"<<endl<<endl;
     cout<<"\t\t\t\t***************************************************************************************************\n\n";
     cout<<"\n\n\t\t\t\t\tNumber of Registered Patients : "<<Ptnt.size() << endl << endl;
-    total = Ptnt.size();
-    for(unsigned int i = 0; i < total; i++)
+    a = Ptnt.size();
+    for(unsigned int i = 0; i < a; i++)
     {
         cout<<"\n\t\t\t\t\tDoctor # "<<i+1<<endl;
         Ptnt[i].displayData();
     }
 
-    cout<<"\n\t\t\t\t\tPatient # "<<total<<" 's data is same as Patient # "<<total-1<<" due to copy constructor.\n\n";
+    cout<<"\n\t\t\t\t\tPatient # "<<a<<" 's data is same as Patient # "<<a-1<<" due to copy constructor.\n\n";
 
-    cout << Dctr_Obj.getTotalDctrs();
+
+
+
+
+    Doctor Dctr_1("Dr. Muhammad Adnan","Surgical Doctor",19);
+    Dctr.push_back(Dctr_1);
+
+    Doctor Dctr_2("Dr. Shahab Khan","Medical Doctor",18);
+    Dctr.push_back(Dctr_2);
+    Doctor Dctr_3(Dctr_2);
+    Dctr.push_back(Dctr_3);
+
+    cout<<"\n\n\t\t\t\t\t\t\t\t\t    Doctor's Data"<<endl<<endl;
+    cout<<"\t\t\t\t***************************************************************************************************\n\n";
+    cout<<"\n\n\t\t\t\t\tNumber of Registered Doctors : "<<Dctr.size() << endl << endl;
+    b = Dctr.size();
+    Doctor Dctr_Obj;
+    Dctr_Obj.setTotalDctrs(b);
+    for(unsigned int i = 0; i < b; i++)
+    {
+        cout<<"\n\t\t\t\t\tDoctor # "<<i+1<<endl;
+        Dctr[i].displayData();
+    }
+
+    cout<<"\n\t\t\t\t\tDoctor # "<<b<<" 's data is same as Doctor # "<<b-1<<" due to copy constructor.\n\n";
+
+
+
+
+    CardiacHos CardiacHospital_1(4563,"National Institute of Cardiovascular Diseases (NICVD)","Karachi","Medium","Public","Thallium Scan, Angiography and Echocardiography (ECHO)",b);
+    CarHos.push_back(CardiacHospital_1);
+    CardiacHos CardiacHospital_2(CardiacHospital_1);
+    CarHos.push_back(CardiacHospital_2);
+
+    cout<<"\n\n\t\t\t\t\t\t\t\t    Cardiac Hospital's Data"<<endl<<endl;
+    cout<<"\t\t\t\t***************************************************************************************************\n\n";
+    cout<<"\n\n\t\t\t\t\tNumber of Registered Hospitals : "<<CarHos.size() << endl << endl;
+    c = CarHos.size();
+    for(unsigned int i = 0; i < c; i++)
+    {
+        cout<<"\n\t\t\t\t\tHospital # "<<i+1<<endl;
+        CarHos[i].displayData();
+    }
+    cout<<"\n\t\t\t\t\tHospital # "<<c<<" 's data is same as Hospital # "<<c-1<<" due to copy constructor.\n\n";
+
+    ChildrenHos ChildrenHospital_1(88569,"National Children Hospital","Karachi","Large","Public","Allergy, Apherisi, Audiology & Brain Treatment","Acute and Long-term Treatment" );
+    ChlHos.push_back(ChildrenHospital_1);
+    ChildrenHos ChildrenHospital_2(ChildrenHospital_1);
+    ChlHos.push_back(ChildrenHospital_2);
+
+    cout<<"\n\n\t\t\t\t\t\t\t\t    Children Hospital's Data"<<endl<<endl;
+    cout<<"\t\t\t\t***************************************************************************************************\n\n";
+    cout<<"\n\n\t\t\t\t\tNumber of Registered Hospitals : "<<ChlHos.size() << endl << endl;
+    d = ChlHos.size();
+    for(unsigned int i = 0; i < d; i++)
+    {
+        cout<<"\n\t\t\t\t\tHospital # "<<i+1<<endl;
+        ChlHos[i].displayData();
+    }
+    cout<<"\n\t\t\t\t\tHospital # "<<d<<" 's data is same as Hospital # "<<d-1<<" due to copy constructor.\n\n";
 
     }
 

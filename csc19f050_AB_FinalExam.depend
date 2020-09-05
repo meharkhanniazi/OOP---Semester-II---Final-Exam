@@ -3,11 +3,11 @@
 	<iostream>
 	"Disease.h"
 
-1599335669 source:e:\smiu\semester ii\oop\final paper\csc19f050_ab_finalexam\hospital.cpp
+1599338271 source:e:\smiu\semester ii\oop\final paper\csc19f050_ab_finalexam\hospital.cpp
 	<iostream>
 	"Hospital.h"
 
-1599335940 source:e:\smiu\semester ii\oop\final paper\csc19f050_ab_finalexam\main.cpp
+1599338490 source:e:\smiu\semester ii\oop\final paper\csc19f050_ab_finalexam\main.cpp
 	<iostream>
 	<windows.h>
 	<vector>
@@ -40,7 +40,7 @@
 1599284237 e:\smiu\semester ii\oop\final paper\csc19f050_ab_finalexam\patient.h
 	"Disease.h"
 
-1599335310 e:\smiu\semester ii\oop\final paper\csc19f050_ab_finalexam\hospital.h
+1599338272 e:\smiu\semester ii\oop\final paper\csc19f050_ab_finalexam\hospital.h
 	"Doctor.h"
 
 1599283145 e:\smiu\semester ii\oop\final paper\csc19f050_ab_finalexam\disease.h
@@ -49,10 +49,11 @@
 	<iostream>
 	"ChildrenHos.h"
 
-1599287567 e:\smiu\semester ii\oop\final paper\csc19f050_ab_finalexam\cardiachos.h
+1599338360 e:\smiu\semester ii\oop\final paper\csc19f050_ab_finalexam\cardiachos.h
 	"Hospital.h"
+	"Doctor.h"
 
-1599335636 source:e:\smiu\semester ii\oop\final paper\csc19f050_ab_finalexam\cardiachos.cpp
+1599338464 source:e:\smiu\semester ii\oop\final paper\csc19f050_ab_finalexam\cardiachos.cpp
 	<iostream>
 	"CardiacHos.h"
 
