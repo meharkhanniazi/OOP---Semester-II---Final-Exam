@@ -48,7 +48,7 @@ int main()
     system("CLS");
     system("CLS");
     system("Color 2F");
-
+    int total;
     vector<CardiacHos> CarHos;
     vector<ChildrenHos> ChlHos;
     vector<Doctor> Dctr;
@@ -86,7 +86,6 @@ int main()
     cout<<"\n\n************************************************************************************************************************";
     cout<<"************************************************************************************************************************";
     cout<<"************************************************************************************************"<<endl;
-
     CardiacHos CardiacHospital_1(4563,"National Institute of Cardiovascular Diseases (NICVD)","Karachi","Medium","Public","Thallium Scan, Angiography and Echocardiography (ECHO)");
     CarHos.push_back(CardiacHospital_1);
     CardiacHos CardiacHospital_2(CardiacHospital_1);
@@ -95,14 +94,13 @@ int main()
     cout<<"\n\n\t\t\t\t\t\t\t\t    Cardiac Hospital's Data"<<endl<<endl;
     cout<<"\t\t\t\t***************************************************************************************************\n\n";
     cout<<"\n\n\t\t\t\t\tNumber of Registered Hospitals : "<<CarHos.size() << endl << endl;
-    int total = CarHos.size();
+    total = CarHos.size();
     for(unsigned int i = 0; i < total; i++)
     {
         cout<<"\n\t\t\t\t\tHospital # "<<i+1<<endl;
         CarHos[i].displayData();
     }
     cout<<"\n\t\t\t\t\tHospital # "<<total<<" 's data is same as Hospital # "<<total-1<<" due to copy constructor.\n\n";
-
 
     ChildrenHos ChildrenHospital_1(88569,"National Children Hospital","Karachi","Large","Public","Allergy, Apherisi, Audiology & Brain Treatment","Acute and Long-term Treatment");
     ChlHos.push_back(ChildrenHospital_1);
@@ -132,8 +130,8 @@ int main()
     cout<<"\n\n\t\t\t\t\t\t\t\t\t    Doctor's Data"<<endl<<endl;
     cout<<"\t\t\t\t***************************************************************************************************\n\n";
     cout<<"\n\n\t\t\t\t\tNumber of Registered Doctors : "<<Dctr.size() << endl << endl;
-    Doctor Dctr_Obj;
     total = Dctr.size();
+    Doctor Dctr_Obj;
     Dctr_Obj.setTotalDctrs(total);
     for(unsigned int i = 0; i < total; i++)
     {

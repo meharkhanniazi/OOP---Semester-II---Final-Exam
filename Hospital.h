@@ -9,12 +9,11 @@ protected:
     double hospitalRegNum;
     string name;
     string location;
-    int totalDoctors = 0;
     Doctor doc;
 
 public:
     Hospital();
-    Hospital(double,string,string,Doctor&);
+    Hospital(double,string,string);
 
     void setHospitalRegNum(double);
     double getHospitalRegNum();

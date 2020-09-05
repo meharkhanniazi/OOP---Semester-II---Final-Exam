@@ -51,6 +51,6 @@ using namespace std;
         cout << endl << "\t\t\t\t\tHospital's Size: \t\t" << getSizeOfHos();
         cout << endl << "\t\t\t\t\tHospital's Ownership:\t\t" << getOwnership();
         cout << endl << "\t\t\t\t\tHospital's Services: \t\t" << getServices();
-        cout << endl << "\t\t\t\t\tTotal Doctors: \t\t\t" << totalDoctors << endl;
+        cout << endl << "\t\t\t\t\tTotal Doctors: \t\t\t" << doc.getTotalDctrs() << endl;
 
     }

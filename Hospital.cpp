@@ -6,12 +6,12 @@ using namespace std;
     {
 
     }
-    Hospital::Hospital(double a,string b,string c, Doctor &d)
+    Hospital::Hospital(double a,string b,string c)
     {
         hospitalRegNum = a;
         name = b;
         location = c;
-        totalDoctors = d.totalDctrs;
+        //totalDoctors = d.totalDctrs;
     }
 
     void Hospital::setHospitalRegNum(double d)
@@ -46,5 +46,5 @@ using namespace std;
         cout << endl << "\t\t\t\t\tHospital's Registeration No.\t\t\t\t" << hospitalRegNum;
         cout << endl << "\t\t\t\t\tHospital's Name:\t\t\t\t\t" << name;
         cout << endl << "\t\t\t\t\tHospital's Location: \t\t\t\t\t" << location;
-        cout << endl << "\t\t\t\t\tTotal Doctors: \t\t\t\t\t\t" << totalDoctors << endl;
+        cout << endl << "\t\t\t\t\tTotal Doctors: \t\t\t\t\t\t" << doc.getTotalDctrs() << endl;
     }
