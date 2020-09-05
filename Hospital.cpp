@@ -42,7 +42,7 @@ using namespace std;
 
     void Hospital::displayData()
     {
-        cout << endl << "\tHospital's Registeration No.\t" << hospitalRegNum;
-        cout << endl << "\tHospital's Name:\t\t" << name;
-        cout << endl << "\tHospital's Location: \t\t" << location << endl;
+        cout << endl << "\t\t\t\t\tHospital's Registeration No.\t\t\t\t" << hospitalRegNum;
+        cout << endl << "\t\t\t\t\tHospital's Name:\t\t\t\t\t" << name;
+        cout << endl << "\t\t\t\t\tHospital's Location: \t\t\t\t\t" << location << endl;
     }

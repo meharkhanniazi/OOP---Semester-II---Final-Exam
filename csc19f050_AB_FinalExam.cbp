@@ -32,6 +32,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="CardiacHos.cpp" />
+		<Unit filename="CardiacHos.h" />
+		<Unit filename="ChildrenHos.cpp" />
+		<Unit filename="ChildrenHos.h" />
 		<Unit filename="Disease.cpp" />
 		<Unit filename="Disease.h" />
 		<Unit filename="Doctor.cpp" />

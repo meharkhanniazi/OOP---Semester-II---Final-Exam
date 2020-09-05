@@ -3,17 +3,19 @@
 	<iostream>
 	"Disease.h"
 
-1599245750 source:e:\smiu\semester ii\oop\final paper\csc19f050_ab_finalexam\hospital.cpp
+1599302261 source:e:\smiu\semester ii\oop\final paper\csc19f050_ab_finalexam\hospital.cpp
 	<iostream>
 	"Hospital.h"
 
-1599287559 source:e:\smiu\semester ii\oop\final paper\csc19f050_ab_finalexam\main.cpp
+1599302618 source:e:\smiu\semester ii\oop\final paper\csc19f050_ab_finalexam\main.cpp
 	<iostream>
+	<windows.h>
 	"Doctor.h"
 	"Patient.h"
 	"Hospital.h"
 	"Disease.h"
 	"CardiacHos.h"
+	"ChildrenHos.h"
 
 1599284394 e:\smiu\semester ii\oop\final paper\csc19f050_ab_finalexam\doctor.h
 	"Patient.h"
