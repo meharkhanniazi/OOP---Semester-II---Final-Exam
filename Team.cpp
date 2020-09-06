@@ -47,7 +47,7 @@ using namespace std;
 
     void Team::setMatchesPlayed(int d)
     {
-        matchesPlayed = d
+        matchesPlayed = d;
     }
     int Team::getMatchesPlayed()
     {

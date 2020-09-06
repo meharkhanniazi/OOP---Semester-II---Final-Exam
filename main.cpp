@@ -7,6 +7,13 @@
 #include"Disease.h"
 #include"CardiacHos.h"
 #include"ChildrenHos.h"
+#include"Team.h"
+#include"Match.h"
+#include"Venue.h"
+#include"Player.h"
+#include"OneDayMatch.h"
+#include"T20Match.h"
+#include"TestMatch.h"
 using namespace std;
 
 
@@ -60,6 +67,7 @@ int main()
     vector<Doctor> Dctr;
     vector<Patient> Ptnt;
     vector<Disease> Dis;
+    vector<Hospital> Hos;
 
     Disease Disease_1("Diabetes","Critical","Type 1 Diabetes");
     Dis.push_back(Disease_1);
@@ -225,10 +233,13 @@ int main()
 
     int a=0,b=0,c=0,d=0;
 
-    vector<Team> team;
-    vector<Match> match;
-    vector<Venue> venue;
-    vector<Player> player;
+    vector<Team> Tm;
+    vector<Match> Mtch;
+    vector<Venue> Vnu;
+    vector<Player> Plyr;
+    vector<OneDayMatch> OneDay;
+    vector<T20Match> T20;
+    vector<TestMatch> Test;
 
     char classselection;
 
@@ -250,6 +261,88 @@ int main()
     cout<<"************************************************************************************************"<<endl;
 
 
+    Venue Venue_1("National Stadium","Karachi, Pakistan",25000,352);
+    Vnu.push_back(Venue_1);
+
+    Venue Venue_2("Gaddafi Stadium","Lahore, Pakistan",35000,518);
+    Vnu.push_back(Venue_2);
+
+    Venue Venue_3(Venue_2);
+    Vnu.push_back(Venue_3);
+
+
+    cout<<"\n\n\t\t\t\t\t\t\t\t\t    Venue's Data"<<endl<<endl;
+    cout<<"\t\t\t\t***************************************************************************************************\n\n";
+    cout<<"\n\n\t\t\t\t\tNumber of Registered Venues : "<<Vnu.size() << endl << endl;
+    a = Vnu.size();
+    for(unsigned int i = 0; i < a; i++)
+    {
+        cout<<"\n\t\t\t\t\tVenue # "<<i+1<<endl;
+        Vnu[i].displayData();
+    }
+
+    cout<<"\n\t\t\t\t\tVenue # "<<a<<" 's data is same as Venue # "<<a-1<<" due to copy constructor.\n\n";
+
+
+
+
+    Match Match_1("One Day International","Pakistan","England",false,true,false);
+    Mtch.push_back(Match_1);
+
+    Match Match_2("T20 International","Pakistan","West Indies",false,true,false);
+    Mtch.push_back(Match_2);
+
+    Match Match_3("International Test Match","Pakistan","India",true,false,false);
+    Mtch.push_back(Match_3);
+
+    Match Match_4(Match_3);
+    Mtch.push_back(Match_4);
+
+
+    cout<<"\n\n\t\t\t\t\t\t\t\t\t    Matches' Data"<<endl<<endl;
+    cout<<"\t\t\t\t***************************************************************************************************\n\n";
+    cout<<"\n\n\t\t\t\t\tNumber of Scheduled Matches : "<<Mtch.size() << endl << endl;
+    b = Mtch.size();
+    for(unsigned int i = 0; i < b; i++)
+    {
+        cout<<"\n\t\t\t\t\tMatch # "<<i+1<<endl;
+        Mtch[i].displayData();
+    }
+
+    cout<<"\n\t\t\t\t\tMatch # "<<b<<" 's data is same as Match # "<<b-1<<" due to copy constructor.\n\n";
+
+
+
+
+
+
+    Player Player_1("Babar Ali","Pakistani","Pakistan",141,"Batsman","9th");
+    Plyr.push_back(Player_1);
+
+    Player Player_2("Taimoor Hussain","Pakistani","Pakistan",15,"Bowler","158th");
+    Plyr.push_back(Player_2);
+
+    Player Player_3("Salman Ali","Pakistani","Pakistan",81,"Batsman","55th");
+    Plyr.push_back(Player_3);
+
+    Player Player_4(Player_3);
+    Plyr.push_back(Player_4);
+
+    cout<<"\n\n\t\t\t\t\t\t\t\t\t    Players' Data"<<endl<<endl;
+    cout<<"\t\t\t\t***************************************************************************************************\n\n";
+    cout<<"\n\n\t\t\t\t\tNumber of Registered Players : "<<Plyr.size() << endl << endl;
+    c = Plyr.size();
+    for(unsigned int i = 0; i < c; i++)
+    {
+        cout<<"\n\t\t\t\t\tPlayer # "<<i+1<<endl;
+        Plyr[i].displayData();
+    }
+
+    cout<<"\n\t\t\t\t\tPlayer # "<<c<<" 's data is same as Player # "<<c-1<<" due to copy constructor.\n\n";
+
+
+
+
 
     }
     else
@@ -257,31 +350,6 @@ int main()
         cout << endl << "\t\tYou have pressed a wrong key!\n\n\n";
 
     }
-
-
-   /* Doctor Dctr1("Dr. Muhammad Adnan","Surgical Doctor",19);
-    Doctor Dctr2(Dctr1);
-    Dctr2.displayData();
-
-    Patient Ptnt1(874598,"Ali Khan",29);
-    Patient Ptnt2(Ptnt1);
-    Ptnt2.displayData();
-
-    Hospital Hsptl1(748596,"Karachi Public Hospital","Saudabad Karachi");
-    Hospital Hsptl2 = Hsptl1;
-    Hsptl2.displayData();
-
-    Disease Dis1("Diabetes","Critical","Type 1 Diabetes");
-    Disease Dis2 = Dis1;
-    Dis2.displayData();
-
-    CardiacHos CarHos1(4563,"National Institute of Cardiovascular Diseases (NICVD)","Karachi","Medium","Public","Thallium Scan, Angiography and Echocardiography (ECHO)");
-    CardiacHos CarHos2(CarHos1);
-    CarHos2.displayData();
-
-    ChildrenHos ChlHos1(88569,"National Children Hospital","Karachi","Large","Public","Allergy, Apherisi, Audiology & Brain Treatment","Acute and Long-term Treatment");
-    ChildrenHos ChlHos2 = ChlHos1;
-    ChlHos2.displayData();*/
 
     return 0;
 }
