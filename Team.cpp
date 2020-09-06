@@ -92,13 +92,13 @@ using namespace std;
 
     void Team::displayData()
     {
-        cout << endl << "\t\t\t\t\tTeam's Name:\t" << getName();
-        cout << endl << "\t\t\t\t\tTeam's Ranking:\t\t" << getRanking();
-        cout << endl << "\t\t\t\t\tTeam's Country \t\t" << getCountry();
-        cout << endl << "\t\t\t\t\tMatches Played: \t\t" << getMatchesPlayed();
-        cout << endl << "\t\t\t\t\tMatches Won:\t\t" << getMatchesWon();
-        cout << endl << "\t\t\t\t\tMatches Lost: \t\t" << getMatchesLost();
-        cout << endl << "\t\t\t\t\tMatches Tied: \t\t\t" << getMatchesTied();
-        cout << endl << "\t\t\t\t\tMatches Drawn: \t\t\t" << getMatchesDrawn() << endl;
+        cout << endl << "\t\t\t\t\tTeam's Name:\t\t\t\t" << getName();
+        cout << endl << "\t\t\t\t\tTeam's Ranking:\t\t\t\t" << getRanking();
+        cout << endl << "\t\t\t\t\tTeam's Country \t\t\t\t" << getCountry();
+        cout << endl << "\t\t\t\t\tMatches Played: \t\t\t" << getMatchesPlayed();
+        cout << endl << "\t\t\t\t\tMatches Won:\t\t\t\t" << getMatchesWon();
+        cout << endl << "\t\t\t\t\tMatches Lost: \t\t\t\t" << getMatchesLost();
+        cout << endl << "\t\t\t\t\tMatches Tied: \t\t\t\t" << getMatchesTied();
+        cout << endl << "\t\t\t\t\tMatches Drawn: \t\t\t\t" << getMatchesDrawn() << endl;
 
     }

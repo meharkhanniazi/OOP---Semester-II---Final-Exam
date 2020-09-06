@@ -313,6 +313,30 @@ int main()
 
 
 
+    Team Team_1("Pakistan Cricket Team","6th","Pakistan",3541,2015,1444,50,32);
+    Tm.push_back(Team_1);
+
+    Team Team_2("England Cricket Team","3rd","England",5215,3654,1252,154,155);
+    Tm.push_back(Team_2);
+
+    Team Team_3("Australian Cricket Team","1st","Australia",4951,3266,1423,200,62);
+    Tm.push_back(Team_3);
+
+    Team Team_4(Team_3);
+
+
+    cout<<"\n\n\t\t\t\t\t\t\t\t\t    Teams' Data"<<endl<<endl;
+    cout<<"\t\t\t\t***************************************************************************************************\n\n";
+    cout<<"\n\n\t\t\t\t\tNumber of Registered Teams : "<<Tm.size() << endl << endl;
+    c = Tm.size();
+    for(unsigned int i = 0; i < c; i++)
+    {
+        cout<<"\n\t\t\t\t\tMatch # "<<i+1<<endl;
+        Tm[i].displayData();
+    }
+
+    cout<<"\n\t\t\t\t\tTeam # "<<c<<" 's data is same as Team # "<<c-1<<" due to copy constructor.\n\n";
+
 
 
 
@@ -331,17 +355,14 @@ int main()
     cout<<"\n\n\t\t\t\t\t\t\t\t\t    Players' Data"<<endl<<endl;
     cout<<"\t\t\t\t***************************************************************************************************\n\n";
     cout<<"\n\n\t\t\t\t\tNumber of Registered Players : "<<Plyr.size() << endl << endl;
-    c = Plyr.size();
-    for(unsigned int i = 0; i < c; i++)
+    d = Plyr.size();
+    for(unsigned int i = 0; i < d; i++)
     {
         cout<<"\n\t\t\t\t\tPlayer # "<<i+1<<endl;
         Plyr[i].displayData();
     }
 
-    cout<<"\n\t\t\t\t\tPlayer # "<<c<<" 's data is same as Player # "<<c-1<<" due to copy constructor.\n\n";
-
-
-
+    cout<<"\n\t\t\t\t\tPlayer # "<<d<<" 's data is same as Player # "<<d-1<<" due to copy constructor.\n\n";
 
 
     }
