@@ -8,7 +8,6 @@ using namespace std;
     }
     CardiacHos::CardiacHos(double a,string b, string c,string d,string e,string f, int g)
     {
-        //Doctor newObj1;
         hospitalRegNum = a;
         name = b;
         location = c;

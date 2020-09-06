@@ -10,11 +10,13 @@ public:
     string specialization;
     int bps;
     int totalDctrs;
+    string appointedAt;
+    int totalPatients;
     Patient pat;
 
 public:
     Doctor();
-    Doctor(string,string,int);
+    Doctor(string,string,int,string);
 
     void setName(string);
     string getName();
@@ -27,6 +29,13 @@ public:
 
     void setTotalDctrs(int);
     int getTotalDctrs();
+
+    void setAppointedAt(string);
+    string getAppointedAt();
+
+    void setTotalPatients(int);
+    int getTotalPatients();
+
 
     void displayData();
 };

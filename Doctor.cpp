@@ -6,11 +6,15 @@ using namespace std;
     {
 
     }
-    Doctor::Doctor(string a, string b, int c)
+
+
+    Doctor::Doctor(string a, string b, int c, string d)
     {
         name = a;
         specialization = b;
         bps = c;
+        appointedAt = d;
+
     }
 
     void Doctor::setName(string d)
@@ -50,9 +54,34 @@ using namespace std;
         return totalDctrs;
     }
 
+    void Doctor::setAppointedAt(string b)
+    {
+        appointedAt = b;
+    }
+
+    string Doctor::getAppointedAt()
+    {
+        return appointedAt;
+    }
+
+    void Doctor::setTotalPatients(int a)
+    {
+        totalPatients = a;
+    }
+
+    int Doctor::getTotalPatients()
+    {
+        return totalPatients;
+    }
+
+
+
+
+
     void Doctor::displayData()
     {
         cout << endl << "\t\t\t\t\tDoctor's Name: \t\t\t" << name;
         cout << endl << "\t\t\t\t\tDoctor's Specialization:\t" << specialization;
-        cout << endl << "\t\t\t\t\tBPS: \t\t\t\t" << bps << endl;
+        cout << endl << "\t\t\t\t\tBPS: \t\t\t\t" << bps;
+        cout << endl << "\t\t\t\t\tTotal Patients: \t\t\t" << Doctor::totalPatients << endl;
     }

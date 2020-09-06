@@ -6,7 +6,7 @@ using namespace std;
     {
 
     }
-    ChildrenHos::ChildrenHos(double a,string b, string c,string d,string e,string f, string g)
+    ChildrenHos::ChildrenHos(double a,string b, string c,string d,string e,string f, string g, int h)
     {
         hospitalRegNum = a;
         name = b;
@@ -15,6 +15,7 @@ using namespace std;
         ownership = e;
         services = f;
         treatmentType = g;
+        newObj2.totalDctrs = h;
     }
 
     void ChildrenHos::setSizeOfHos(string d)
@@ -61,6 +62,7 @@ using namespace std;
         cout << endl << "\t\t\t\t\tHospital's Size: \t\t" << getSizeOfHos();
         cout << endl << "\t\t\t\t\tHospital's Ownership:\t\t" << getOwnership();
         cout << endl << "\t\t\t\t\tHospital's Services: \t\t" << getServices();
-        cout << endl << "\t\t\t\t\tHospital's Treatment Type: \t" << getTreatmentType() << endl;
+        cout << endl << "\t\t\t\t\tHospital's Treatment Type: \t" << getTreatmentType();
+        cout << endl << "\t\t\t\t\tTotal Doctors: \t\t\t" << newObj2.getTotalDctrs() << endl;
     }
 

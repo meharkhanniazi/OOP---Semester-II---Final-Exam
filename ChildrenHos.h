@@ -1,7 +1,9 @@
 #ifndef included_CHILDREN_H
 #define included_CHILDREN_H
 #include"Hospital.h"
+#include"Doctor.h"
 using namespace std;
+class Doctor;
 class ChildrenHos : public Hospital
 {
 private:
@@ -9,10 +11,11 @@ private:
     string ownership;
     string services;
     string treatmentType;
+    Doctor newObj2;
 
 public:
     ChildrenHos();
-    ChildrenHos(double,string,string,string,string,string,string);
+    ChildrenHos(double,string,string,string,string,string,string,int);
 
     void setSizeOfHos(string);
     string getSizeOfHos();

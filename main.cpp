@@ -48,7 +48,13 @@ int main()
     system("CLS");
     system("CLS");
     system("Color 2F");
+
     int a=0,b=0,c=0,d=0;
+    int cardiacHosDoctors = 0;
+    int childrenHosDoctors = 0;
+    int cardiacPatient = 0;
+    int childrenPatient = 0;
+
     vector<CardiacHos> CarHos;
     vector<ChildrenHos> ChlHos;
     vector<Doctor> Dctr;
@@ -88,13 +94,13 @@ int main()
     cout<<"************************************************************************************************"<<endl;
 
 
-    Patient Patient_1(874598,"Ali Khan",29);
+    Patient Patient_1(874598,"Ali Khan",29,Disease_1.getName(),Disease_1.getLevel(),Disease_1.getCategory(),"Dr. Muhammad Adnan");
     Ptnt.push_back(Patient_1);
 
-    Patient Patient_2(886545,"Sameer Khan",18);
+    Patient Patient_2(886545,"Sameer Khan",18,Disease_2.getName(),Disease_2.getLevel(),Disease_2.getCategory(),"Dr. Shahab Khan");
     Ptnt.push_back(Patient_2);
 
-    Patient Patient_3(965874,"Muhammad Talha",46);
+    Patient Patient_3(965874,"Muhammad Talha",46,Disease_3.getName(),Disease_3.getLevel(),Disease_3.getCategory(),"Dr. Shahab Khan");
     Ptnt.push_back(Patient_3);
 
     Patient Patient_4(Patient_3);
@@ -106,7 +112,7 @@ int main()
     a = Ptnt.size();
     for(unsigned int i = 0; i < a; i++)
     {
-        cout<<"\n\t\t\t\t\tDoctor # "<<i+1<<endl;
+        cout<<"\n\t\t\t\t\tPatient # "<<i+1<<endl;
         Ptnt[i].displayData();
     }
 
@@ -114,20 +120,40 @@ int main()
 
 
 
+      Doctor Dctr_1("Dr. Muhammad Adnan","Surgical Doctor",19,"National Institute of Cardiovascular Diseases (NICVD)");
+      Dctr.push_back(Dctr_1);
+
+      Doctor Dctr_2("Dr. Shahab Khan","Medical Doctor",18,"National Children Hospital");
+      Dctr.push_back(Dctr_2);
+      Doctor Dctr_3(Dctr_2);
+      Dctr.push_back(Dctr_3);
+
+      b = Dctr.size();
+
+    for(unsigned int s = 0; s < b; s++)
+    {
+        if(Ptnt[s].getAppointmentTo() == "Dr. Muhammad Adnan")
+        {
+            cardiacPatient++;
+        }
+        else if(Ptnt[s].getAppointmentTo() == "Dr. Shahab Khan")
+        {
+            childrenPatient++;
+
+        }
+    }
+    int x = cardiacPatient;
+    int y = childrenPatient;
+    /*Dctr_1.setTotalPatients(x);
+    Dctr_2.setTotalPatients(y);
+    Dctr_3.setTotalPatients(y);*/
 
 
-    Doctor Dctr_1("Dr. Muhammad Adnan","Surgical Doctor",19);
-    Dctr.push_back(Dctr_1);
-
-    Doctor Dctr_2("Dr. Shahab Khan","Medical Doctor",18);
-    Dctr.push_back(Dctr_2);
-    Doctor Dctr_3(Dctr_2);
-    Dctr.push_back(Dctr_3);
 
     cout<<"\n\n\t\t\t\t\t\t\t\t\t    Doctor's Data"<<endl<<endl;
     cout<<"\t\t\t\t***************************************************************************************************\n\n";
     cout<<"\n\n\t\t\t\t\tNumber of Registered Doctors : "<<Dctr.size() << endl << endl;
-    b = Dctr.size();
+
     Doctor Dctr_Obj;
     Dctr_Obj.setTotalDctrs(b);
     for(unsigned int i = 0; i < b; i++)
@@ -140,8 +166,20 @@ int main()
 
 
 
+    for(int s = 0; s < b; s++)
+    {
+        if(Dctr[s].getAppointedAt() == "National Institute of Cardiovascular Diseases (NICVD)")
+        {
+            cardiacHosDoctors++;
+        }
+        else if(Dctr[s].getAppointedAt() == "National Children Hospital")
+        {
+            childrenHosDoctors++;
+        }
+    }
 
-    CardiacHos CardiacHospital_1(4563,"National Institute of Cardiovascular Diseases (NICVD)","Karachi","Medium","Public","Thallium Scan, Angiography and Echocardiography (ECHO)",b);
+
+    CardiacHos CardiacHospital_1(4563,"National Institute of Cardiovascular Diseases (NICVD)","Karachi","Medium","Public","Thallium Scan, Angiography and Echocardiography (ECHO)",cardiacHosDoctors);
     CarHos.push_back(CardiacHospital_1);
     CardiacHos CardiacHospital_2(CardiacHospital_1);
     CarHos.push_back(CardiacHospital_2);
@@ -157,7 +195,7 @@ int main()
     }
     cout<<"\n\t\t\t\t\tHospital # "<<c<<" 's data is same as Hospital # "<<c-1<<" due to copy constructor.\n\n";
 
-    ChildrenHos ChildrenHospital_1(88569,"National Children Hospital","Karachi","Large","Public","Allergy, Apherisi, Audiology & Brain Treatment","Acute and Long-term Treatment" );
+    ChildrenHos ChildrenHospital_1(88569,"National Children Hospital","Karachi","Large","Public","Allergy, Apherisi, Audiology & Brain Treatment","Acute and Long-term Treatment",childrenHosDoctors);
     ChlHos.push_back(ChildrenHospital_1);
     ChildrenHos ChildrenHospital_2(ChildrenHospital_1);
     ChlHos.push_back(ChildrenHospital_2);
@@ -173,13 +211,44 @@ int main()
     }
     cout<<"\n\t\t\t\t\tHospital # "<<d<<" 's data is same as Hospital # "<<d-1<<" due to copy constructor.\n\n";
 
+
+
+
+
+
+
     }
-
-
     else if (classselection == '2')
     {
-        system("CLS");
-        //cricketManagementSystem();
+    system("CLS");
+    system("Color 4F");
+
+    int a=0,b=0,c=0,d=0;
+
+    vector<Team> team;
+    vector<Match> match;
+    vector<Venue> venue;
+    vector<Player> player;
+
+    char classselection;
+
+    cout<<endl<<endl;
+    cout<<"************************************************************************************************************************";
+    cout<<"************************************************************************************************************************";
+    cout<<"************************************************************************************************";
+    cout<<"\n\n\t\t\t\t\tWelcome To CSC 104 – OBJECT-ORIENTED PROGRAMMING (OOP) FINAL EXAM (SPRING 2020)"<<endl;
+    cout<<"\n\n************************************************************************************************************************";
+    cout<<"************************************************************************************************************************";
+    cout<<"************************************************************************************************";
+    cout<<endl;
+    cout<<"************************************************************************************************************************";
+    cout<<"************************************************************************************************************************";
+    cout<<"************************************************************************************************";
+    cout<<"\n\n\t\t\t\t\t\t\t\tCRICKET MANAGEMENT SYSTEM (CMS)"<<endl;
+    cout<<"\n\n************************************************************************************************************************";
+    cout<<"************************************************************************************************************************";
+    cout<<"************************************************************************************************"<<endl;
+
 
 
     }
