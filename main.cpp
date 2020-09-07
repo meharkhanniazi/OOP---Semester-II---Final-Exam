@@ -154,9 +154,6 @@ int main()
       b = Dctr.size();
 
 
-
-
-
     cout<<"\n\n\t\t\t\t\t\t\t\t\t    Doctor's Data"<<endl<<endl;
     cout<<"\t\t\t\t***************************************************************************************************\n\n";
     cout<<"\n\n\t\t\t\t\tNumber of Registered Doctors : "<<Dctr.size() << endl << endl;

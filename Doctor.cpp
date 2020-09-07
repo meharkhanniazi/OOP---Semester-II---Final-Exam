@@ -7,7 +7,6 @@ using namespace std;
 
     }
 
-
     Doctor::Doctor(string a, string b, int c, string d, Patient e)
     {
         name = a;
