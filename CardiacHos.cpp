@@ -6,7 +6,7 @@ using namespace std;
     {
 
     }
-    CardiacHos::CardiacHos(double a,string b, string c,string d,string e,string f, int g)
+    CardiacHos::CardiacHos(double a,string b, string c,string d,string e,string f,Doctor h)
     {
         hospitalRegNum = a;
         name = b;
@@ -14,7 +14,7 @@ using namespace std;
         sizeOfHos = d;
         ownership = e;
         services = f;
-        newObj.totalDctrs = g;
+        newObj.setTotalCardiacDctrs(h.getTotalCardiacDctrs());
     }
 
     void CardiacHos::setSizeOfHos(string d)
@@ -44,6 +44,18 @@ using namespace std;
         return services;
     }
 
+
+    void CardiacHos::setTotalCardiacDctrs(int a)
+    {
+        totalCardiacDctrs = a;
+    }
+
+    int CardiacHos::getTotalCardiacDctrs()
+    {
+        return totalCardiacDctrs;
+    }
+
+
     void CardiacHos::displayData()
     {
         cout << endl << "\t\t\t\t\tHospital's Registeration No.\t" << getHospitalRegNum();
@@ -52,6 +64,6 @@ using namespace std;
         cout << endl << "\t\t\t\t\tHospital's Size: \t\t" << getSizeOfHos();
         cout << endl << "\t\t\t\t\tHospital's Ownership:\t\t" << getOwnership();
         cout << endl << "\t\t\t\t\tHospital's Services: \t\t" << getServices();
-        cout << endl << "\t\t\t\t\tTotal Doctors: \t\t\t" << newObj.getTotalDctrs() << endl;
+        cout << endl << "\t\t\t\t\tTotal Doctors: \t\t\t" << newObj.getTotalCardiacDctrs() << endl;
 
     }

@@ -6,15 +6,15 @@ using namespace std;
     {
 
     }
-    Patient::Patient(double a,string b,int c, string d, string e, string f, string g)
+    Patient::Patient(double a,string b,int c, Disease d, string e)
     {
         patientID = a;
         name = b;
         age = c;
-        dis.name = d;
-        dis.level = e;
-        dis.category = f;
-        appointmentTo = g;
+        dis.setName(d.getName());
+        dis.setLevel(d.getLevel());
+        dis.setCategory(d.getCategory());
+        appointmentTo = e;
     }
 
     void Patient::setPatientID(double d)
@@ -53,6 +53,17 @@ using namespace std;
     {
         return appointmentTo;
     }
+
+    void Patient::setTotalPatients(int a)
+    {
+        totalPatients = a;
+    }
+
+    int Patient::getTotalPatients()
+    {
+        return totalPatients;
+    }
+
 
     void Patient::displayData()
     {

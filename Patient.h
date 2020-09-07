@@ -10,11 +10,12 @@ private:
     string name;
     int age;
     string appointmentTo;
+    int totalPatients;
     Disease dis;
 
 public:
     Patient();
-    Patient(double,string,int,string,string,string,string);
+    Patient(double,string,int,Disease,string);
 
     void setPatientID(double);
     double getPatientID();
@@ -27,6 +28,9 @@ public:
 
     void setAppointmentTo(string);
     string getAppointmentTo();
+
+    void setTotalPatients(int);
+    int getTotalPatients();
 
     void displayData();
 };

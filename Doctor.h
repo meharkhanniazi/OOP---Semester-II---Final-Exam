@@ -9,14 +9,15 @@ public:
     string name;
     string specialization;
     int bps;
+    int totalCardiacDctrs;
+    int totalChildrenDctrs;
     int totalDctrs;
     string appointedAt;
-    int totalPatients;
-    Patient pat;
+    Patient Pat;
 
 public:
     Doctor();
-    Doctor(string,string,int,string);
+    Doctor(string,string,int,string,Patient);
 
     void setName(string);
     string getName();
@@ -27,15 +28,17 @@ public:
     void setBPS(int);
     int getBPS();
 
-    void setTotalDctrs(int);
-    int getTotalDctrs();
-
     void setAppointedAt(string);
     string getAppointedAt();
 
-    void setTotalPatients(int);
-    int getTotalPatients();
+    void setTotalCardiacDctrs(int);
+    int getTotalCardiacDctrs();
 
+    void setTotalChildrenDctrs(int);
+    int getTotalChildrenDctrs();
+
+    void setTotalDctrs(int);
+    int getTotalDctrs();
 
     void displayData();
 };

@@ -11,11 +11,12 @@ private:
     string ownership;
     string services;
     string treatmentType;
+    int totalChildrenDctrs;
     Doctor newObj2;
 
 public:
     ChildrenHos();
-    ChildrenHos(double,string,string,string,string,string,string,int);
+    ChildrenHos(double,string,string,string,string,string,string,Doctor);
 
     void setSizeOfHos(string);
     string getSizeOfHos();
@@ -28,6 +29,9 @@ public:
 
     void setTreatmentType(string);
     string getTreatmentType();
+
+    void setTotalChildrenDctrs(int);
+    int getTotalChildrenDctrs();
 
     void displayData();
 };

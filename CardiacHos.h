@@ -10,11 +10,12 @@ private:
     string sizeOfHos;
     string ownership;
     string services;
+    int totalCardiacDctrs;
     Doctor newObj;
 
 public:
     CardiacHos();
-    CardiacHos(double,string,string,string,string,string,int);
+    CardiacHos(double,string,string,string,string,string,Doctor);
 
     void setSizeOfHos(string);
     string getSizeOfHos();
@@ -24,6 +25,9 @@ public:
 
     void setServices(string);
     string getServices();
+
+    void setTotalCardiacDctrs(int);
+    int getTotalCardiacDctrs();
 
     void displayData();
 };
