@@ -1,6 +1,7 @@
 #ifndef included_MATCH_H
 #define included_MATCH_H
-
+#include"Venue.h"
+class Venue;
 using namespace std;
 class Match
 {
@@ -11,10 +12,11 @@ private:
     string isTournament;
     string isSeries;
     string isIndependant;
+    Venue Ven;
 
 public:
     Match();
-    Match(string,string,string,bool,bool,bool);
+    Match(string,string,string,bool,bool,bool,Venue);
 
     void setName(string);
     string getName();

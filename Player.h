@@ -1,6 +1,7 @@
 #ifndef included_PLAYER_H
 #define included_PLAYER_H
-
+#include"Team.h"
+class Team;
 using namespace std;
 class Player
 {
@@ -11,10 +12,11 @@ private:
     int matchesPlayed;
     string playerType;
     string playerRanking;
+    Team Tm;
 
 public:
     Player();
-    Player(string,string,string,int,string,string);
+    Player(string,string,string,int,string,string,Team);
 
     void setName(string);
     string getName();

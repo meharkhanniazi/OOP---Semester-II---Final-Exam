@@ -1,6 +1,7 @@
 #ifndef included_TEAM_H
 #define included_TEAM_H
-
+#include"Match.h"
+class Match;
 using namespace std;
 class Team
 {
@@ -13,10 +14,11 @@ private:
     int matchesLost;
     int matchesTied;
     int matchesDrawn;
+    Match Mtch;
 
 public:
     Team();
-    Team(string,string,string,int,int,int,int,int);
+    Team(string,string,string,int,int,int,int,int,Match);
 
     void setName(string);
     string getName();

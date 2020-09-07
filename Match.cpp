@@ -6,7 +6,7 @@ using namespace std;
     {
 
     }
-    Match::Match(string a,string b,string c,bool d,bool e,bool f)
+    Match::Match(string a,string b,string c,bool d,bool e,bool f,Venue g)
     {
 
 
@@ -37,6 +37,10 @@ using namespace std;
         {
         isIndependant = "No";
         }
+        Ven.setName(g.getName());
+        Ven.setLocation(g.getLocation());
+        Ven.setCapacity(g.getCapacity());
+        Ven.setMatchesPlayed(g.getMatchesPlayed());
     }
 
     void Match::setName(string g)
@@ -100,5 +104,9 @@ using namespace std;
         cout << endl << "\t\t\t\t\tTeam 2: \t\t\t\t" << getOponent2();
         cout << endl << "\t\t\t\t\tIs Tournament's Match? \t\t\t" << getIsTournament();
         cout << endl << "\t\t\t\t\tIs Series's Match?\t\t\t" << getIsSeries();
-        cout << endl << "\t\t\t\t\tIs Independant Match? \t\t\t" << getIsIndependant() << endl;
-    }
+        cout << endl << "\t\t\t\t\tIs Independant Match? \t\t\t" << getIsIndependant();
+        cout << endl << "\t\t\t\t\tVenue's Name:\t\t\t\t" << Ven.getName();
+        cout << endl << "\t\t\t\t\tVenue's Location:\t\t\t" << Ven.getLocation();
+        cout << endl << "\t\t\t\t\tCrowd Capacity: \t\t\t" << Ven.getCapacity();
+        cout << endl << "\t\t\t\t\tTotal Matches Played Here: \t\t" << Ven.getMatchesPlayed() << endl;
+     }

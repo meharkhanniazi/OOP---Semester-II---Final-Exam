@@ -286,13 +286,13 @@ int main()
 
 
 
-    Match Match_1("One Day International","Pakistan","England",false,true,false);
+    Match Match_1("One Day International","Pakistan","India",false,true,false,Venue_1);
     Mtch.push_back(Match_1);
 
-    Match Match_2("T20 International","Pakistan","West Indies",false,true,false);
+    Match Match_2("T20 International","England","West Indies",false,true,false,Venue_2);
     Mtch.push_back(Match_2);
 
-    Match Match_3("International Test Match","Pakistan","India",true,false,false);
+    Match Match_3("International Test Match","Australia","Sri Lanka",true,false,false,Venue_3);
     Mtch.push_back(Match_3);
 
     Match Match_4(Match_3);
@@ -313,13 +313,13 @@ int main()
 
 
 
-    Team Team_1("Pakistan Cricket Team","6th","Pakistan",3541,2015,1444,50,32);
+    Team Team_1("Pakistan Cricket Team","6th","Pakistan",3541,2015,1444,50,32,Match_1);
     Tm.push_back(Team_1);
 
-    Team Team_2("England Cricket Team","3rd","England",5215,3654,1252,154,155);
+    Team Team_2("England Cricket Team","3rd","England",5215,3654,1252,154,155,Match_2);
     Tm.push_back(Team_2);
 
-    Team Team_3("Australian Cricket Team","1st","Australia",4951,3266,1423,200,62);
+    Team Team_3("Australian Cricket Team","1st","Australia",4951,3266,1423,200,62,Match_3);
     Tm.push_back(Team_3);
 
     Team Team_4(Team_3);
@@ -331,7 +331,7 @@ int main()
     c = Tm.size();
     for(unsigned int i = 0; i < c; i++)
     {
-        cout<<"\n\t\t\t\t\tMatch # "<<i+1<<endl;
+        cout<<"\n\t\t\t\t\tTeam # "<<i+1<<endl;
         Tm[i].displayData();
     }
 
@@ -340,13 +340,13 @@ int main()
 
 
 
-    Player Player_1("Babar Ali","Pakistani","Pakistan",141,"Batsman","9th");
+    Player Player_1("Babar Ali","Pakistani","Pakistan",141,"Batsman","9th",Team_1);
     Plyr.push_back(Player_1);
 
-    Player Player_2("Taimoor Hussain","Pakistani","Pakistan",15,"Bowler","158th");
+    Player Player_2("Taimoor Hussain","Pakistani","Pakistan",15,"Bowler","158th",Team_2);
     Plyr.push_back(Player_2);
 
-    Player Player_3("Salman Ali","Pakistani","Pakistan",81,"Batsman","55th");
+    Player Player_3("Salman Ali","Pakistani","Pakistan",81,"Batsman","55th",Team_3);
     Plyr.push_back(Player_3);
 
     Player Player_4(Player_3);
