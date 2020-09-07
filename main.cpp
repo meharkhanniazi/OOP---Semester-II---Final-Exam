@@ -1,6 +1,7 @@
 #include <iostream>
 #include <windows.h>
 #include <vector>
+
 #include"Doctor.h"
 #include"Patient.h"
 #include"Hospital.h"
@@ -14,11 +15,16 @@
 #include"OneDayMatch.h"
 #include"T20Match.h"
 #include"TestMatch.h"
+
 using namespace std;
 
 
+//Main Function Start
+
 int main()
 {
+    //Welcome Screen
+
     system("mode 650");
     system("CLS");
     system("Color 5F");
@@ -50,17 +56,26 @@ int main()
 
     cout<<endl<<endl<<"\t\tEnter the Selected Number To Continue : ";
     cin>>classselection;
+
     if (classselection == '1')
     {
+
+    //Hospital Management System
+
     system("CLS");
     system("CLS");
     system("Color 2F");
 
+    //Variables Initialization
+
     int a=0,b=0,c=0,d=0;
+
     int cardiacHosDoctors = 0;
     int childrenHosDoctors = 0;
     int cardiacPatient = 0;
     int childrenPatient = 0;
+
+    //Vectors of Objects
 
     vector<CardiacHos> CarHos;
     vector<ChildrenHos> ChlHos;
@@ -69,20 +84,7 @@ int main()
     vector<Disease> Dis;
     vector<Hospital> Hos;
 
-    Disease Disease_1("Diabetes","Critical","Type 1 Diabetes");
-    Dis.push_back(Disease_1);
-
-    Disease Disease_2("Cancer","Stage II","leukemia");
-    Dis.push_back(Disease_2);
-
-    Disease Disease_3("Hepatitis C","Stage I","Hepatitis");
-    Dis.push_back(Disease_2);
-
-    Disease Disease_4(Disease_3);
-    Dis.push_back(Disease_4);
-
-
-    char classselection;
+    //Header
 
     cout<<endl<<endl;
     cout<<"************************************************************************************************************************";
@@ -102,6 +104,24 @@ int main()
     cout<<"************************************************************************************************"<<endl;
 
 
+    //Objects of Disease Class
+
+    Disease Disease_1("Diabetes","Critical","Type 1 Diabetes");
+    Dis.push_back(Disease_1);
+
+    Disease Disease_2("Cancer","Stage II","leukemia");
+    Dis.push_back(Disease_2);
+
+    Disease Disease_3("Hepatitis C","Stage I","Hepatitis");
+    Dis.push_back(Disease_2);
+
+    Disease Disease_4(Disease_3);
+    Dis.push_back(Disease_4);
+
+
+    //Objects of Class Patient
+
+
     Patient Patient_1(874598,"Ali Khan",29,Disease_1,"Dr. Muhammad Adnan");
     Ptnt.push_back(Patient_1);
 
@@ -114,10 +134,16 @@ int main()
     Patient Patient_4(Patient_3);
     Ptnt.push_back(Patient_4);
 
+    //Patient Data
+
     cout<<"\n\n\t\t\t\t\t\t\t\t\t    Patient's Data"<<endl<<endl;
     cout<<"\t\t\t\t***************************************************************************************************\n\n";
     cout<<"\n\n\t\t\t\t\tNumber of Registered Patients : "<<Ptnt.size() << endl << endl;
+
+    //Counter for Patient's Objects / Total Objects
     a = Ptnt.size();
+
+    //Displaying Patients' Data
     for(unsigned int i = 0; i < a; i++)
     {
         cout<<"\n\t\t\t\t\tPatient # "<<i+1<<endl;
@@ -125,6 +151,8 @@ int main()
     }
 
     cout<<"\n\t\t\t\t\tPatient # "<<a<<" 's data is same as Patient # "<<a-1<<" due to copy constructor.\n\n";
+
+    //Counter for Cardiac and Children Patients
 
     for(unsigned int s = 0; s < 3; s++)
     {
@@ -139,9 +167,14 @@ int main()
         }
     }
 
-    Patient_1.setTotalPatients(cardiacPatient);
-    Patient_2.setTotalPatients(childrenPatient);
-    Patient_3.setTotalPatients(childrenPatient);
+      //Passing No. of Cardiac and Children Patients in Patient's Objects
+
+      Patient_1.setTotalPatients(cardiacPatient);
+      Patient_2.setTotalPatients(childrenPatient);
+      Patient_3.setTotalPatients(childrenPatient);
+
+
+      //Objects of Class Doctor
 
       Doctor Dctr_1("Dr. Muhammad Adnan","Surgical Doctor",19,"National Institute of Cardiovascular Diseases (NICVD)",Patient_1);
       Dctr.push_back(Dctr_1);
@@ -151,15 +184,21 @@ int main()
       Doctor Dctr_3(Dctr_2);
       Dctr.push_back(Dctr_3);
 
+
+    //Counter for Doctor's Objects / Total Objects
       b = Dctr.size();
 
+    //Doctor's Data
 
     cout<<"\n\n\t\t\t\t\t\t\t\t\t    Doctor's Data"<<endl<<endl;
     cout<<"\t\t\t\t***************************************************************************************************\n\n";
     cout<<"\n\n\t\t\t\t\tNumber of Registered Doctors : "<<Dctr.size() << endl << endl;
 
+    //Passing total doctors in an objects's member function
     Doctor Dctr_Obj;
     Dctr_Obj.setTotalDctrs(b);
+
+    //Displaying Doctors
     for(unsigned int i = 0; i < b; i++)
     {
         cout<<"\n\t\t\t\t\tDoctor # "<<i+1<<endl;
@@ -169,7 +208,7 @@ int main()
     cout<<"\n\t\t\t\t\tDoctor # "<<b<<" 's data is same as Doctor # "<<b-1<<" due to copy constructor.\n\n";
 
 
-
+    //Finding total numbers of Cardiac Doctors and Children Doctors
     for(int s = 0; s < b; s++)
     {
         if(Dctr[s].getAppointedAt() == "National Institute of Cardiovascular Diseases (NICVD)")
@@ -182,12 +221,18 @@ int main()
         }
     }
 
+
+    //Passing No. of Cardiac and Children Doctors in Doctor's Objects
+
     Doctor CardiacObj;
     CardiacObj.setTotalCardiacDctrs(cardiacHosDoctors);
 
     Doctor ChildrenObj;
     ChildrenObj.setTotalChildrenDctrs(childrenHosDoctors);
 
+
+
+    //Objects of Class Cardiac Hospital
 
     CardiacHos CardiacHospital_1(4563,"National Institute of Cardiovascular Diseases (NICVD)","Karachi","Medium","Public","Thallium Scan, Angiography and Echocardiography (ECHO)",CardiacObj);
     CarHos.push_back(CardiacHospital_1);
@@ -197,13 +242,21 @@ int main()
     cout<<"\n\n\t\t\t\t\t\t\t\t    Cardiac Hospital's Data"<<endl<<endl;
     cout<<"\t\t\t\t***************************************************************************************************\n\n";
     cout<<"\n\n\t\t\t\t\tNumber of Registered Hospitals : "<<CarHos.size() << endl << endl;
+
+    //Counter for Cardiac Hospital's Objects / Total Hospitals
     c = CarHos.size();
+
+    //Displaying Hospitals' Data
     for(unsigned int i = 0; i < c; i++)
     {
         cout<<"\n\t\t\t\t\tHospital # "<<i+1<<endl;
         CarHos[i].displayData();
     }
     cout<<"\n\t\t\t\t\tHospital # "<<c<<" 's data is same as Hospital # "<<c-1<<" due to copy constructor.\n\n";
+
+
+    //Objects of Class Children Hospital
+
 
     ChildrenHos ChildrenHospital_1(88569,"National Children Hospital","Karachi","Large","Public","Allergy, Apherisi, Audiology & Brain Treatment","Acute and Long-term Treatment",ChildrenObj);
     ChlHos.push_back(ChildrenHospital_1);
@@ -213,7 +266,11 @@ int main()
     cout<<"\n\n\t\t\t\t\t\t\t\t    Children Hospital's Data"<<endl<<endl;
     cout<<"\t\t\t\t***************************************************************************************************\n\n";
     cout<<"\n\n\t\t\t\t\tNumber of Registered Hospitals : "<<ChlHos.size() << endl << endl;
+
+    //Counter for Children Hospital's Objects / Total Hospitals
     d = ChlHos.size();
+
+    //Displaying Children Hospital's Data
     for(unsigned int i = 0; i < d; i++)
     {
         cout<<"\n\t\t\t\t\tHospital # "<<i+1<<endl;
@@ -228,12 +285,21 @@ int main()
 
 
     }
+
+
     else if (classselection == '2')
     {
+
+    //Cricket Management System
+
     system("CLS");
     system("Color 4F");
 
+    //Variables
     int a=0,b=0,c=0,d=0;
+
+
+    //Vectors of Objects
 
     vector<Team> Tm;
     vector<Match> Mtch;
@@ -243,7 +309,7 @@ int main()
     vector<T20Match> T20;
     vector<TestMatch> Test;
 
-    char classselection;
+    //Header
 
     cout<<endl<<endl;
     cout<<"************************************************************************************************************************";
@@ -263,6 +329,8 @@ int main()
     cout<<"************************************************************************************************"<<endl;
 
 
+    //Objects of Class Venue
+
     Venue Venue_1("National Stadium","Karachi, Pakistan",25000,352);
     Vnu.push_back(Venue_1);
 
@@ -273,10 +341,16 @@ int main()
     Vnu.push_back(Venue_3);
 
 
+    //Venue's Data
+
     cout<<"\n\n\t\t\t\t\t\t\t\t\t    Venue's Data"<<endl<<endl;
     cout<<"\t\t\t\t***************************************************************************************************\n\n";
     cout<<"\n\n\t\t\t\t\tNumber of Registered Venues : "<<Vnu.size() << endl << endl;
+
+    //Counter for Venues' Objects / Total Venues
     a = Vnu.size();
+
+    //Displaying Venues' Data
     for(unsigned int i = 0; i < a; i++)
     {
         cout<<"\n\t\t\t\t\tVenue # "<<i+1<<endl;
@@ -287,6 +361,7 @@ int main()
 
 
 
+    //Objects of Class Match
 
     Match Match_1("One Day International","Pakistan","India",false,true,false,Venue_1);
     Mtch.push_back(Match_1);
@@ -301,10 +376,16 @@ int main()
     Mtch.push_back(Match_4);
 
 
+    //Match's Data
+
     cout<<"\n\n\t\t\t\t\t\t\t\t\t    Matches' Data"<<endl<<endl;
     cout<<"\t\t\t\t***************************************************************************************************\n\n";
     cout<<"\n\n\t\t\t\t\tNumber of Scheduled Matches : "<<Mtch.size() << endl << endl;
+
+    //Counter for Matches' Objects / Total Matches
     b = Mtch.size();
+
+    //Displaing Matches' Data
     for(unsigned int i = 0; i < b; i++)
     {
         cout<<"\n\t\t\t\t\tMatch # "<<i+1<<endl;
@@ -314,6 +395,8 @@ int main()
     cout<<"\n\t\t\t\t\tMatch # "<<b<<" 's data is same as Match # "<<b-1<<" due to copy constructor.\n\n";
 
 
+
+    //Objects of Class Team
 
     Team Team_1("Pakistan Cricket Team","6th","Pakistan",3541,2015,1444,50,32,Match_1);
     Tm.push_back(Team_1);
@@ -325,12 +408,18 @@ int main()
     Tm.push_back(Team_3);
 
     Team Team_4(Team_3);
+    Tm.push_back(Team_4);
 
+    //Teams' Data
 
     cout<<"\n\n\t\t\t\t\t\t\t\t\t    Teams' Data"<<endl<<endl;
     cout<<"\t\t\t\t***************************************************************************************************\n\n";
     cout<<"\n\n\t\t\t\t\tNumber of Registered Teams : "<<Tm.size() << endl << endl;
+
+    //Counter for Objects' of Class Team / Total Teams
     c = Tm.size();
+
+    //Displaying Team's Data
     for(unsigned int i = 0; i < c; i++)
     {
         cout<<"\n\t\t\t\t\tTeam # "<<i+1<<endl;
@@ -340,7 +429,7 @@ int main()
     cout<<"\n\t\t\t\t\tTeam # "<<c<<" 's data is same as Team # "<<c-1<<" due to copy constructor.\n\n";
 
 
-
+    //Objects of Class Player
 
     Player Player_1("Babar Ali","Pakistani","Pakistan Cricket Team",141,"Batsman","9th",Team_1);
     Plyr.push_back(Player_1);
@@ -354,10 +443,17 @@ int main()
     Player Player_4(Player_3);
     Plyr.push_back(Player_4);
 
+
+    //Players' Data
+
     cout<<"\n\n\t\t\t\t\t\t\t\t\t    Players' Data"<<endl<<endl;
     cout<<"\t\t\t\t***************************************************************************************************\n\n";
     cout<<"\n\n\t\t\t\t\tNumber of Registered Players : "<<Plyr.size() << endl << endl;
+
+    //Counter for Objects of Players / Total Players
     d = Plyr.size();
+
+    //Displaying Players Data
     for(unsigned int i = 0; i < d; i++)
     {
         cout<<"\n\t\t\t\t\tPlayer # "<<i+1<<endl;
@@ -370,7 +466,8 @@ int main()
     }
     else
     {
-        cout << endl << "\t\tYou have pressed a wrong key!\n\n\n";
+        cout << endl << "\n\n\t\tYou pressed a wrong key!";
+        cout << endl << "\t\tThanks for using this Management System\n\n\n";
 
     }
 
